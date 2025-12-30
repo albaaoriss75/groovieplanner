@@ -11,7 +11,14 @@ export interface UserPreferences {
   timeCommitment: 'low' | 'medium' | 'high';
 }
 
+export interface QuickTask {
+  id: string;
+  text: string;
+  completed: boolean;
+}
+
 export interface PlanOutput {
+  id?: string; // Unique ID for persistence tracking
   title: string;
   summary: string;
   dailyRoutine: {
@@ -22,6 +29,13 @@ export interface PlanOutput {
   habits: string[];
   milestones: string[];
   quote: string;
+}
+
+export interface PlanCompletion {
+  morning: boolean[];
+  afternoon: boolean[];
+  evening: boolean[];
+  habits: boolean[];
 }
 
 export interface Translation {
@@ -46,4 +60,15 @@ export interface Translation {
   morning: string;
   afternoon: string;
   evening: string;
+  resetPlan: string;
+  progressTitle: string;
+  quickTasksTitle: string;
+  addTaskPlaceholder: string;
+  shareTitle: string;
+  downloadButton: string;
+  downloadPDF: string;
+  downloadPNG: string;
+  shareButton: string;
+  copyButton: string;
+  copySuccess: string;
 }
